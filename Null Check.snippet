@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Null Check</Title>
+			<Author>C.Small</Author>
+			<Description>checks an argument for null</Description>
+			<HelpUrl />
+			<Keywords />
+			<SnippetTypes />
+			<Shortcut>nullcheck</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object Editable="True">
+					<Type />
+					<ID>ParamName</ID>
+					<ToolTip />
+					<Default>myparam</Default>
+					<Function />
+				</Object>
+				<Object Editable="True">
+					<Type />
+					<ID>ExceptionMessage</ID>
+					<ToolTip />
+					<Default>message</Default>
+					<Function />
+				</Object>
+			</Declarations>
+			<References />
+			<Code Kind="any" Language="CSharp"><![CDATA[if ($ParamName$ == null)
+	throw new ArgumentNullException("$ParamName$",$ExceptionMessage$);
+$end$
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

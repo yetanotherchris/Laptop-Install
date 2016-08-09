@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Equals Summary</Title>
+			<Author>C Small</Author>
+			<Description>Autocomplete for Equals overriden summary</Description>
+			<HelpUrl />
+			<Keywords />
+			<SnippetTypes />
+			<Shortcut>eqsummary</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object Editable="True">
+					<Type />
+					<ID>arg1</ID>
+					<ToolTip>The name of this class</ToolTip>
+					<Default />
+					<Function />
+				</Object>
+				<Object Editable="True">
+					<Type />
+					<ID>arg2</ID>
+					<ToolTip>Descriptive text of how equals is calculated</ToolTip>
+					<Default />
+					<Function />
+				</Object>
+			</Declarations>
+			<References />
+			<Code Kind="any" Language="CSharp"><![CDATA[/// <summary>
+/// Determines whether two <see cref="$arg1$"/> objects are equal.
+/// </summary>
+/// <remarks>
+/// For the two <see cref="$arg1$"/> objects to be equal, they $arg2$.
+/// </remarks>
+/// <param name="obj">The <see cref="$arg1$">$arg1$</see> object to compare to the current <see cref="$arg1$">$arg1$</see>.</param>
+/// <returns>True if the specified <see cref="$arg1$">$arg1$</see> is equal to the current <see cref="$arg1$">$arg1$</see>; otherwise false.</returns>]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
