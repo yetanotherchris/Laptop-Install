@@ -20,7 +20,7 @@ choco feature enable -n allowGlobalConfirmation
 # All the software needed to be a modern website developing programmer engineer
 choco install googlechrome
 choco install firefox
-choco install coneumu
+choco install conemu
 choco install visualstudiocode
 choco install linqpad5
 choco install 7zip
