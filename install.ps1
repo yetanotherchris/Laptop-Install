@@ -24,7 +24,6 @@ choco install conemu
 choco install visualstudiocode
 choco install linqpad5
 choco install 7zip
-choco install github
 choco install docker-for-windows
 choco install curl
 choco install terraform
