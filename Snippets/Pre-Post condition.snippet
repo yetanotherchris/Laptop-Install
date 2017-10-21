@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Pre/Post condition</Title>
+			<Author>Author</Author>
+			<Description>Description</Description>
+			<HelpUrl />
+			<Keywords />
+			<SnippetTypes />
+			<Shortcut>prepost</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object Editable="True">
+					<Type />
+					<ID>pre</ID>
+					<ToolTip>The precondition</ToolTip>
+					<Default />
+					<Function />
+				</Object>
+				<Object Editable="True">
+					<Type />
+					<ID>post</ID>
+					<ToolTip>The post condition</ToolTip>
+					<Default />
+					<Function />
+				</Object>
+			</Declarations>
+			<References />
+			<Code Kind="any" Language="CSharp"><![CDATA[<remarks>
+	<p>
+		Preconditions:
+		<list type="bullet">
+			<item>$pre$</item>
+		</list>
+	</p>
+	
+	<p>
+		Postconditions:
+		<list type="bullet">
+			<item>$post$</item>
+		</list>
+	</p>
+</remarks>
+$end$]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

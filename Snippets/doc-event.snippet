@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Event and Method</Title>
+			<Author>C.Small</Author>
+			<Description>Creates an Event and method, plus documentation</Description>
+			<HelpUrl />
+			<Keywords />
+			<SnippetTypes />
+			<Shortcut>docevent</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object Editable="True">
+					<Type />
+					<ID>EventName</ID>
+					<ToolTip />
+					<Default />
+					<Function />
+				</Object>
+			</Declarations>
+			<References />
+			<Code Kind="any" Language="CSharp"><![CDATA[/// <summary>
+/// Occurs when $end$(enter your description here).
+/// </summary>
+public event EventHandler $EventName$;
+
+/// <summary>
+/// Raises the <see cref="$EventName$">$EventName$</see> event.
+/// </summary>
+/// <param name="e">An <see cref="EventArgs">EventArgs</see> object that contains the event data.</param>
+protected virtual void On$EventName$(EventArgs e)
+{
+	if ($EventName$ != null)
+		$EventName$(this, e);
+}]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
