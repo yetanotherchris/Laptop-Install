@@ -30,6 +30,9 @@ choco install curl
 choco install terraform
 choco install poshgit
 
+# Fix curl
+Remove-Item alias:curl; set-Alias curl curl.exe -Scope Global
+
 # Resharper
 choco install resharper-platform -y
 $resharperInstaller = Resolve-Path "$env:ChocolateyInstall\lib\resharper-platform\JetBrains.ReSharperUltimate.*.exe"
