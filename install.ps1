@@ -8,7 +8,6 @@ if ($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administ
 
 Set-ExecutionPolicy RemoteSigned -Confirm:$false -Force
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-refresheenv
 
 # Stop prompting in Chocolately
 choco feature enable -n allowGlobalConfirmation
