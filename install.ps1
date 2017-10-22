@@ -50,7 +50,7 @@ pushd master/VisualStudio-VM-master
 cp -Force ./profile.ps1 $profile
 
 # Install code snippets
-cp -Force snippets/*.* "~\Documents\Visual Studio 2017\Code Snippets\Visual C#\My Code Snippets"; 
+cp -Force snippets/*.* "~\Documents\Visual Studio 2017\Code Snippets\Visual C#\My Code Snippets"
 
 # Install the Ubuntu font for Conemu
 Expand-Archive ubuntu-font-family-0.83.zip ./ubuntu-fonts
