@@ -8,49 +8,6 @@ if ($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administ
 
 Set-ExecutionPolicy RemoteSigned -Confirm:$false -Force
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-
-# Stop prompting in Chocolately
-choco feature enable -n allowGlobalConfirmation
-
-# These commands will install Visual Studio
-#choco install visualstudio2017community
-#choco install visualstudio2017-workload-netcoretools
-#choco install visualstudio2017-workload-netweb
-
-# All the software needed to be a modern website developing programmer engineer
-choco install googlechrome
-choco install firefox
-choco install conemu
-choco install visualstudiocode
-choco install linqpad5
-choco install 7zip
-choco install docker-for-windows
-choco install curl
-choco install terraform
-choco install poshgit
-
-# Fix curl
-Remove-Item alias:curl; set-Alias curl curl.exe -Scope Global
-
-# Resharper
-choco install resharper-platform -y
-$resharperInstaller = Resolve-Path "$env:ChocolateyInstall\lib\resharper-platform\JetBrains.ReSharperUltimate.*.exe"
-Write-Output "Installing ReSharper Ultimate with lots of goodies: $resharperInstaller"
-Start-Process -FilePath "$resharperInstaller" -ArgumentList "/SpecificProductNames=ReSharper /Silent=True" -Wait -PassThru
-
-# Linux Windows subsystem
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
-
-# Check for admin
-$currentPrincipal = New-Object Security.Principal.WindowsPrincipal( [Security.Principal.WindowsIdentity]::GetCurrent())
-if ($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator) -eq $false)
-{
-    Write-Error "Please run this scripts as an administrator"
-    exit 1
-}
-
-Set-ExecutionPolicy RemoteSigned -Confirm:$false -Force
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 refresheenv
 
 # Stop prompting in Chocolately
