@@ -12,10 +12,13 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 # Stop prompting in Chocolately
 choco feature enable -n allowGlobalConfirmation
 
-# These commands will install Visual Studio
-#choco install visualstudio2017community
-#choco install visualstudio2017-workload-netcoretools
-#choco install visualstudio2017-workload-netweb
+# For Hyper-V on the desklaptop
+if ($env:INSTALL_VS2017 -neq "")
+{
+    choco install visualstudio2017community
+    choco install visualstudio2017-workload-netcoretools
+    choco install visualstudio2017-workload-netweb
+}
 
 # All the software needed to be a modern website developing programmer engineer
 choco install googlechrome
