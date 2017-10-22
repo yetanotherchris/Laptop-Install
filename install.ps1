@@ -107,3 +107,6 @@ popd
 # Github for Windows (it's not yet on Choco)
 # -------------------------------------------------------------------------------------------
 start https://desktop.github.com
+
+# Fire up the Docker notification to logout
+start "C:\Program Files\Docker\Docker\Docker for Windows.exe"
