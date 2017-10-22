@@ -6,6 +6,9 @@ It works nicely with the Azure Visual Studio VM (which cost £0.15/£0.30/£0.60
 
     iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/yetanotherchris/VisualStudio-VM/master/install.ps1'))
     
+To install Visual Studio 2017 as well, set an environmental variable first: `$env:INSTALL_VS2017="yes"`
+
+
 or ..
 
 Copy the install.ps1 onto the machine and run it.
