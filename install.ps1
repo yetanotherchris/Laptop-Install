@@ -37,6 +37,9 @@ $resharperInstaller = Resolve-Path "$env:ChocolateyInstall\lib\resharper-platfor
 Write-Output "Installing ReSharper Ultimate with lots of goodies: $resharperInstaller"
 Start-Process -FilePath "$resharperInstaller" -ArgumentList "/SpecificProductNames=ReSharper /Silent=True" -Wait -PassThru
 
+# In explorer, show file extensions
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0 /f
+
 # Linux Windows subsystem
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
 
