@@ -13,7 +13,7 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 choco feature enable -n allowGlobalConfirmation
 
 # For Hyper-V on the desklaptop
-if ($env:INSTALL_VS2017 -neq "")
+if ($env:INSTALL_VS2017 -ne "")
 {
     choco install visualstudio2017community
     choco install visualstudio2017-workload-netcoretools
