@@ -8,7 +8,6 @@ if ($currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administ
 
 Set-ExecutionPolicy RemoteSigned -Confirm:$false -Force
 iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-refresheenv
 
 # Stop prompting in Chocolately
 choco feature enable -n allowGlobalConfirmation
@@ -21,11 +20,10 @@ choco feature enable -n allowGlobalConfirmation
 # All the software needed to be a modern website developing programmer engineer
 choco install googlechrome
 choco install firefox
-choco install coneumu
+choco install conemu
 choco install visualstudiocode
 choco install linqpad5
 choco install 7zip
-choco install github
 choco install docker-for-windows
 choco install curl
 choco install terraform
@@ -36,9 +34,6 @@ choco install resharper-platform -y
 $resharperInstaller = Resolve-Path "$env:ChocolateyInstall\lib\resharper-platform\JetBrains.ReSharperUltimate.*.exe"
 Write-Output "Installing ReSharper Ultimate with lots of goodies: $resharperInstaller"
 Start-Process -FilePath "$resharperInstaller" -ArgumentList "/SpecificProductNames=ReSharper /Silent=True" -Wait -PassThru
-
-# In explorer, show file extensions
-reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0 /f
 
 # Linux Windows subsystem
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
