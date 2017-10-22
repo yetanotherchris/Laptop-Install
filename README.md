@@ -1,6 +1,6 @@
 # VisualStudio Virtual Machine installer
 
-This installs all development software _I use_ in one script, and machine customisations. Works nicely with the Azure Visual Studio VM (which costs 13p an hour).
+This repo installs all development software _I use_ in one script, and machine customisations. Works nicely with the Azure Visual Studio VM (which costs 13p an hour) - use a DV3 or EV3 size instance to get Docker support.
 
     iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/yetanotherchris/VisualStudio-VM/master/install.ps1'))
     
