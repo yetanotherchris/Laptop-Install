@@ -1,3 +1,5 @@
+# Location of this file: C:\Users\chris\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+
 Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
 
 # Fix curl, add a grep, start in the home directory
