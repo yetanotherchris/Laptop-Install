@@ -3,7 +3,11 @@ Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
 # Fix curl, add a grep, start in the home directory
 Remove-Item alias:curl; set-Alias curl curl.exe -Scope Global
 Set-Alias grep select-string
-cd ~
+
+# Only go to the home directory when we're not in VSCode
+if ($env:VSCODE_CWD -eq $null) {
+    cd ~
+}
 
 # A nice bash-like prompt
 function prompt {
