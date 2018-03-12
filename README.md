@@ -9,4 +9,9 @@ It works nicely with the Azure Visual Studio VM (which cost £0.17 an hour for D
 or ..
 
 Copy the install.ps1 onto the machine and run it.
+
+## Installing Visual Studio Community
 To install Visual Studio 2017 as well, set an environmental variable first: `$env:INSTALL_VS2017="yes"`
+
+## Setup for Visual Studio Professional
+Set `$env:IS_VS_PRO = "yes" before running to do this
