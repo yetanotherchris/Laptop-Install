@@ -17,6 +17,8 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 # Stop prompting in Chocolately
 choco feature enable -n allowGlobalConfirmation
 
+$vsStudio = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"
+
 # -------------------------------------------------------------------------------------------
 # For installing onto Hyper-V on the desklaptop
 # -------------------------------------------------------------------------------------------
@@ -25,6 +27,14 @@ if ($env:INSTALL_VS2017 -eq "yes")
     choco install visualstudio2017community
     choco install visualstudio2017-workload-netcoretools
     choco install visualstudio2017-workload-netweb
+}
+
+# -------------------------------------------------------------------------------------------
+# VS Professional toggle
+# -------------------------------------------------------------------------------------------
+if ($env:IS_VS_PRO -eq "yes")
+{
+    $vsStudio = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe"
 }
 
 # -------------------------------------------------------------------------------------------
