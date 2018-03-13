@@ -15,3 +15,6 @@ To install Visual Studio 2017 as well, set an environmental variable first: `$en
 
 ## Setup for Visual Studio Professional
 Set `$env:IS_VS_PRO = "yes"` before running to do this
+
+## Skipping the fonts being installed
+If the installation fails for any reason, fonts end up getting re-installed with a painful set of modals to re-click. You can skip this by using `$env:SKIP_FONTS="yes"`
