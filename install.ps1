@@ -18,6 +18,12 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 choco feature enable -n allowGlobalConfirmation
 
 $vsStudio = "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe"
+$installFonts = $true;
+
+if ($env:SKIP_FONTS -eq "yes")
+{
+    $installFonts = $false;
+}
 
 # -------------------------------------------------------------------------------------------
 # For installing onto Hyper-V on the desklaptop
@@ -91,12 +97,14 @@ cp -Force snippets/*.* "~\Documents\Visual Studio 2017\Code Snippets\Visual C#\M
 # -------------------------------------------------------------------------------------------
 # Install the Ubuntu font for Conemu
 # -------------------------------------------------------------------------------------------
-log "Installing the Ubuntu font"
-Expand-Archive ubuntu-font-family-0.83.zip ./ubuntu-fonts
+if ($installFonts -eq $true)
+{
+    log "Installing the Ubuntu font"
+    Expand-Archive ubuntu-font-family-0.83.zip ./ubuntu-fonts
 
-$fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
-dir ubuntu-fonts\ubuntu-font-family-0.83\*.ttf | foreach-object { $fonts.CopyHere($_.fullname) }
-
+    $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
+    dir ubuntu-fonts\ubuntu-font-family-0.83\*.ttf | foreach-object { $fonts.CopyHere($_.fullname) }
+}
 # -------------------------------------------------------------------------------------------
 # Install conemu settings
 # -------------------------------------------------------------------------------------------
