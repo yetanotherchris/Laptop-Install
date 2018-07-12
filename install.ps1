@@ -52,10 +52,14 @@ choco install conemu
 choco install visualstudiocode
 choco install linqpad5
 choco install 7zip
-choco install docker-for-windows
 choco install curl
-choco install terraform
-choco install poshgit
+choco install terraform --force
+choco install poshgit --force
+
+if ($env:DOCKER_TOOLS -ne "no")
+{
+    choco install docker-for-windows
+}
 
 # -------------------------------------------------------------------------------------------
 # Resharper
@@ -68,7 +72,10 @@ Start-Process -FilePath "$resharperInstaller" -ArgumentList "/SpecificProductNam
 # -------------------------------------------------------------------------------------------
 # Linux Windows subsystem
 # -------------------------------------------------------------------------------------------
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
+if ($env:DOCKER_TOOLS -ne "no")
+{
+    Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
+}
 
 # -------------------------------------------------------------------------------------------
 # Download the source of this repo
@@ -115,17 +122,19 @@ cp -Force ./conemu.xml ~\AppData\Roaming\conemu.xml
 # Install VS settings
 # -------------------------------------------------------------------------------------------
 log "Updating Visual Studio user settings"
-set-alias devenv "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\devenv.exe" -Scope global
+set-alias devenv "$vsStudio" -Scope global
 devenv /ResetSettings .\vs2017.vssettings
 
 log "Done!"
 popd
 
 # -------------------------------------------------------------------------------------------
-# Github for Windows (it's not yet on Choco)
+# Sourcetree
 # -------------------------------------------------------------------------------------------
-curl.exe -O -k -L https://desktop.githubusercontent.com/releases/1.0.4-6e5e9664/GitHubDesktopSetup.exe
-./GitHubDesktopSetup.exe
+choco install sourcetree
 
 # Fire up the Docker notification to prompt a logout
-start "C:\Program Files\Docker\Docker\Docker for Windows.exe"
+if ($env:DOCKER_TOOLS -ne "no")
+{
+    start "C:\Program Files\Docker\Docker\Docker for Windows.exe"
+}
