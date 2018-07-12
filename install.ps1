@@ -46,25 +46,25 @@ if ($env:IS_VS_PRO -eq "yes")
 # -------------------------------------------------------------------------------------------
 # All the software needed to be a modern website developing programmer engineer
 # -------------------------------------------------------------------------------------------
-choco install googlechrome
-choco install firefox
-choco install conemu
-choco install visualstudiocode
-choco install linqpad5
-choco install 7zip
-choco install curl
-choco install terraform --force
-choco install poshgit --force
+choco upgrade googlechrome
+choco upgrade firefox
+choco upgrade conemu
+choco upgrade visualstudiocode
+choco upgrade linqpad5
+choco upgrade 7zip
+choco upgrade curl
+choco upgrade terraform
+choco upgrade poshgit
 
 if ($env:DOCKER_TOOLS -ne "no")
 {
-    choco install docker-for-windows
+    choco upgrade docker-for-windows
 }
 
 # -------------------------------------------------------------------------------------------
 # Resharper
 # -------------------------------------------------------------------------------------------
-choco install resharper-platform -y
+choco upgrade resharper-platform -y
 $resharperInstaller = Resolve-Path "$env:ChocolateyInstall\lib\resharper-platform\JetBrains.ReSharperUltimate.*.exe"
 Write-Output "Installing ReSharper Ultimate with lots of goodies: $resharperInstaller"
 Start-Process -FilePath "$resharperInstaller" -ArgumentList "/SpecificProductNames=ReSharper /Silent=True" -Wait -PassThru
