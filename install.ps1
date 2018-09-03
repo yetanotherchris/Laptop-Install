@@ -30,9 +30,19 @@ if ($env:SKIP_FONTS -eq "yes")
 # -------------------------------------------------------------------------------------------
 if ($env:INSTALL_VS2017 -eq "yes")
 {
-    choco install visualstudio2017community
-    choco install visualstudio2017-workload-netcoretools
-    choco install visualstudio2017-workload-netweb
+    if ($env:IS_VS_PRO -eq "no")
+    {
+        choco install visualstudio2017community
+        choco install visualstudio2017-workload-netcoretools
+        choco install visualstudio2017-workload-netweb
+    }
+    elseif ($env:IS_VS_PRO -eq "yes")
+    {
+        choco install visualstudio2017professional
+        choco install visualstudio2017-workload-netcoretools
+        choco install visualstudio2017-workload-netweb
+    }
+
 }
 
 # -------------------------------------------------------------------------------------------
