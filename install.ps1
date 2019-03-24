@@ -94,9 +94,9 @@ pushd $env:temp
 
 rm -Force master.zip -ErrorAction Ignore;
 rm -Force -Recurse master  -ErrorAction Ignore;
-curl.exe -O -k -L https://github.com/yetanotherchris/VisualStudio-VM/archive/master.zip
+curl.exe -O -k -L https://github.com/yetanotherchris/Laptop-Install/archive/master.zip
 Expand-Archive ./master.zip -Force
-pushd master/VisualStudio-VM-master
+pushd master/Laptop-Install-master
 
 # -------------------------------------------------------------------------------------------
 # Powershell profile
