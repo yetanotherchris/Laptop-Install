@@ -27,7 +27,6 @@ choco upgrade linqpad5
 choco upgrade 7zip
 choco upgrade curl
 choco upgrade poshgit
-choco upgrade gitkraken
 choco upgrade google-backup-and-sync
 choco upgrade everything
 choco upgrade adobereader
