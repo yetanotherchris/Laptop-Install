@@ -8,7 +8,7 @@ It works nicely with the Azure Visual Studio VM (which cost £0.17 an hour for D
 
 Run this in a Powershell administrator shell:
 
-    iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/yetanotherchris/Laptop-Install/master/rider.ps1'))
+    iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/yetanotherchris/Laptop-Install/master/install.ps1'))
     
 or ..
 
