@@ -1,13 +1,13 @@
 # Location of this file: C:\Users\chris\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 
-Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-a4faccd\src\posh-git.psd1'
+Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-9bda399\src\posh-git.psd1'
 
 # Fix curl, add a grep, start in the home directory
 Remove-Item alias:curl; set-Alias curl curl.exe -Scope Global
 Set-Alias grep select-string
 
-# Only go to the home directory when we're not in VSCode
-if ($env:VSCODE_CWD -eq $null) {
+# Only go to the home directory when we're not in VSCode/Rider
+if ($env:TERM_PROGRAM -ne 'vscode' -AND $env:TERMINAL_EMULATOR -ne 'JetBrains-JediTerm') {
     cd ~
 }
 
