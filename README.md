@@ -14,6 +14,16 @@ or ..
 
 Copy the rider.ps1 onto the machine and run it.
 
+### Enable Docker inside Hyper-V
+
+On the host laptop:
+
+```
+$vmName = "Windows 10"
+Set-VMProcessor -VMName $vmName -ExposeVirtualizationExtensions $true
+Get-VMNetworkAdapter -VMName $vmName | Set-VMNetworkAdapter -MacAddressSpoofing On
+```
+
 ### Skipping Docker for Windows installation
 Set `$env:DOCKER_TOOLS = "no"` before running to skip installation of Docker for Windows and the Linux Subsystem.
 
