@@ -12,7 +12,7 @@ Run this in a Powershell administrator shell:
     
 or ..
 
-Copy the rider.ps1 onto the machine and run it.
+Copy the install.ps1 onto the machine and run it.
 
 ### Enable Docker inside Hyper-V
 
@@ -26,6 +26,3 @@ Get-VMNetworkAdapter -VMName $vmName | Set-VMNetworkAdapter -MacAddressSpoofing 
 
 ### Skipping Docker for Windows installation
 Set `$env:DOCKER_TOOLS = "no"` before running to skip installation of Docker for Windows and the Linux Subsystem.
-
-### Skipping the fonts being installed
-If the installation fails for any reason, fonts end up getting re-installed with a painful set of modals to re-click. You can skip this by using `$env:SKIP_FONTS="yes"`
