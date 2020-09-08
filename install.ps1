@@ -21,7 +21,7 @@ choco feature enable -n allowGlobalConfirmation
 # All the software needed to be a modern website developing programmer engineer
 # -------------------------------------------------------------------------------------------
 choco upgrade googlechrome
-choco upgrade opera
+choco upgrade microsoft-edge
 choco upgrade visualstudiocode
 choco upgrade linqpad5
 choco upgrade 7zip
@@ -49,7 +49,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 # -------------------------------------------------------------------------------------------
 # Download rider settings file. Not sure how to install them automatically?
 # -------------------------------------------------------------------------------------------
-pushd $env:HOME/Downloads
+pushd $env:HOMEPATH/Downloads
 
 rm -Force rider-settings.jar -ErrorAction Ignore;
 curl.exe -O -k -L https://raw.githubusercontent.com/yetanotherchris/Laptop-Install/master/rider-settings.jar
